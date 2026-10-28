@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        background-color: #4CAF50;
+        cursor: pointer;
+        border: none;
+    }
+</style>
+<body>
+    <div id="container">
+        <input id="wt" placeholder="Weight in kg">
+        <input id="ht" placeholder="Height in cm">
+        <button id="btn">calculate</button>
+        <h2 id="result">Result appears here</h2>
+    </div>
+
+    <script>
+        
+
+        document.getElementById("btn").addEventListener("click", function(){
+            let ht = document.getElementById("ht").value;
+            let wt = document.getElementById("wt").value;
+            let htNum = Number(ht);
+            let wtNum = Number(wt);
+            
+            let newHt = htNum/100;
+            let ans = wtNum / (newHt * newHt);
+
+            document.getElementById("result").innerText = ans.toFixed(2);
+        })
+
+    </script>
+</body>
+</html>
